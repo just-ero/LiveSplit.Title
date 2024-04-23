@@ -1,6 +1,7 @@
-﻿using LiveSplit.Model;
+﻿using System;
+
+using LiveSplit.Model;
 using LiveSplit.UI.Components;
-using System;
 
 [assembly: ComponentFactory(typeof(TitleFactory))]
 
@@ -14,7 +15,10 @@ namespace LiveSplit.UI.Components
 
         public ComponentCategory Category => ComponentCategory.Information;
 
-        public IComponent Create(LiveSplitState state) => new Title();
+        public IComponent Create(LiveSplitState state)
+        {
+            return new Title();
+        }
 
         public string UpdateName => ComponentName;
 
